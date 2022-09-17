@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FDE79C"
-    tools:context=".nari_login">
+    tools:context=".guardianLogin">
 
 
     <androidx.cardview.widget.CardView
@@ -86,7 +86,7 @@
                 android:text="Forgot Password?"></Button>
 
             <Button
-                android:id="@+id/narilogin"
+                android:id="@+id/login"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -97,7 +97,7 @@
                 android:transitionName="btn_log"></Button>
 
             <Button
-                android:id="@+id/narisignup"
+                android:id="@+id/signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"

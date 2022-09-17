@@ -7,29 +7,29 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class nari_login extends AppCompatActivity {
+public class guardianLogin extends AppCompatActivity {
 
     Button log,signup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_nari_login);
+        setContentView(R.layout.activity_guardian_login);
 
-        log = findViewById(R.id.narilogin);
-        signup = findViewById(R.id.narisignup);
+        log = findViewById(R.id.login);
+        signup = findViewById(R.id.signup);
 
         log.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(nari_login.this,NariDashboard.class));
+                startActivity(new Intent(guardianLogin.this,guardianDashboard.class));
             }
         });
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(nari_login.this,SignUpNari.class));
+                startActivity(new Intent(guardianLogin.this,guardianSignup.class));
             }
         });
     }

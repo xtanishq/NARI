@@ -14,6 +14,21 @@
         android:theme="@style/Theme.NARI"
         tools:targetApi="31">
         <activity
+            android:name=".guardianDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".guardianSignup"
+            android:exported="false" />
+        <activity
+            android:name=".guardianLogin"
+            android:exported="false" />
+        <activity
+            android:name=".NariDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".SignUpNari"
+            android:exported="false" />
+        <activity
             android:name=".nari_login"
             android:exported="false" />
         <activity
@@ -21,7 +36,14 @@
             android:exported="false" />
         <activity
             android:name=".MainPage"
-            android:exported="false" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -44,11 +66,6 @@
             android:name=".MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
