@@ -75,7 +75,7 @@
                             android:includeFontPadding="false"
                             android:text="Fake Call"
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                     </RelativeLayout>
 
@@ -104,7 +104,7 @@
                             android:includeFontPadding="false"
                             android:text="Helpline"
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                     </RelativeLayout>
 
@@ -133,7 +133,7 @@
                             android:includeFontPadding="false"
                             android:text="Location"
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                     </RelativeLayout>
 
@@ -162,7 +162,7 @@
                             android:includeFontPadding="false"
                             android:text="SP Mode"
                             android:textColor="@color/black"
-                            android:textSize="18sp" />
+                            android:textSize="14sp" />
 
                     </RelativeLayout>
 
@@ -225,7 +225,7 @@
                                 android:text="Mahila Surakhsa kendra"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -267,7 +267,7 @@
                                 android:text="Self Protection"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -323,7 +323,7 @@
                                 android:text="Location Track"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -365,7 +365,7 @@
                                 android:text="Add Guardians"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -429,7 +429,7 @@
                                 android:text="Emergency Call"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -471,7 +471,7 @@
                                 android:text="Self Protection"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
