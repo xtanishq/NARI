@@ -18,6 +18,7 @@ import android.os.Handler;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import com.beast.nari.databinding.ActivityMapsBinding;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -25,12 +26,12 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.beast.nari.databinding.ActivityMapsBinding;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
     private ActivityMapsBinding binding;
+
     double LATITUDE = -34, LONGITUDE = 152;
     int PERMISSION_ID = 44;
     private LocationManager locationManager;
@@ -52,7 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        checkLocation();
 
        progressDialog.setMessage("Please Wait...");
-       progressDialog.show();
+//       progressDialog.show();
 
     }
 
@@ -67,7 +68,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                 locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
                 locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 0, this);
-                progressDialog.show();
+//                progressDialog.show();
 
             }else {
                 enableLocation();
