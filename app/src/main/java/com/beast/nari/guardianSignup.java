@@ -1,6 +1,7 @@
 package com.beast.nari;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,7 +13,11 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
+import com.beast.nari.databinding.ActivityGuardianSignupBinding;
+
 public class guardianSignup extends AppCompatActivity {
+
+    private ActivityGuardianSignupBinding binding;
 
     Button signup,already;
 
@@ -29,7 +34,7 @@ public class guardianSignup extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_guardian_signup);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_guardian_signup);
 
         signup = findViewById(R.id.signup2);
         already = findViewById(R.id.login2);
