@@ -85,7 +85,7 @@
                                 android:text="Nari Live Location"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -127,7 +127,7 @@
                                 android:text="Add Nari"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -183,7 +183,7 @@
                                 android:text="Emergency Call"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>
@@ -225,7 +225,7 @@
                                 android:text="Profile"
                                 android:textAlignment="center"
                                 android:textColor="@color/black"
-                                android:textSize="18sp" />
+                                android:textSize="16sp" />
 
                         </RelativeLayout>
                     </androidx.cardview.widget.CardView>

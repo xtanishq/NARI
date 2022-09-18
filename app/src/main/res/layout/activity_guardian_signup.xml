@@ -156,7 +156,7 @@
 
 
                 <Button
-                    android:id="@+id/button"
+                    android:id="@+id/guabutton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -179,7 +179,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:id="@+id/rdgmedium">
+                    android:id="@+id/radio">
 
                     <RadioButton
                         android:id="@+id/rgbMale"
