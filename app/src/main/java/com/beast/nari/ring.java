@@ -8,14 +8,20 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.beast.nari.databinding.ActivityRingBinding;
 
 public class ring extends AppCompatActivity {
+
+    private ActivityRingBinding binding;
+
     ImageView callend,callstartt;
     MediaPlayer mediaPlayer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ring);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_ring);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 //        callend = findViewById(R.id.callend);
         callstartt = findViewById(R.id.callstart);

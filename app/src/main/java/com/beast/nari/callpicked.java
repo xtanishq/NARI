@@ -11,14 +11,18 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+
+import com.beast.nari.databinding.ActivityCallpickedBinding;
 
 public class callpicked extends AppCompatActivity {
     ImageView callclose;
+    private ActivityCallpickedBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_callpicked);
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_callpicked);
 //        getSupportActionBar().hide();
 //        setContentView(R.layout.activity_callpicked);getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         callclose = findViewById(R.id.callendd);
