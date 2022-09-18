@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class NariDashboard extends AppCompatActivity {
-    ImageView msk,helpline;
+    ImageView msk,helpline,pdfself;
     ImageView fakecall;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,6 +18,7 @@ public class NariDashboard extends AppCompatActivity {
         msk = findViewById(R.id.msk);
         fakecall = findViewById(R.id.fakecall);
         helpline = findViewById(R.id.helpLine);
+        pdfself = findViewById(R.id.self);
 
         msk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,13 +39,19 @@ public class NariDashboard extends AppCompatActivity {
 
             }
         });
-        fakecall = findViewById(R.id.fakecall);
+
 
         fakecall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(NariDashboard.this, ring.class));
 
+            }
+        });
+        pdfself.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(NariDashboard.this,pdfview.class));
             }
         });
     }
