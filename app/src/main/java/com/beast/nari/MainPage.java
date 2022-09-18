@@ -19,7 +19,7 @@ public class MainPage extends AppCompatActivity {
     private ActivityMainPageBinding binding;
     SharedPreferences sp;
     SharedPreferences.Editor editor;
-    String signStatus;
+    String signStatus, job;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,20 @@ public class MainPage extends AppCompatActivity {
         editor = sp.edit();
 
         signStatus = sp.getString("SIGN_UP_STATUS", null);
+        job = sp.getString("JOB", null);
 
         if (signStatus != null){
-            startActivity(new Intent(getApplicationContext(), NariDashboard.class));
-            finish();
+
+            if (job.equalsIgnoreCase("NARI")) {
+
+                startActivity(new Intent(getApplicationContext(), NariDashboard.class));
+                finish();
+            }
+            if (job.equalsIgnoreCase("GUARDIAN")) {
+
+                startActivity(new Intent(getApplicationContext(), guardianDashboard.class));
+                finish();
+            }
         }
 
 
