@@ -67,7 +67,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             if (isLocationEnabled()){
 
                 locationManager =(LocationManager) getSystemService(Context.LOCATION_SERVICE);
-                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 100, 0, this);
+                locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
 //                progressDialog.show();
 
             }else {
@@ -100,7 +100,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.addMarker(options).showInfoWindow();
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-        mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
+//        mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
     }
@@ -117,6 +117,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         mMap.addMarker(options).showInfoWindow();
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+//        mMap.moveCamera(CameraUpdateFactory.zoomTo(18));
 
         progressDialog.dismiss();
 
