@@ -16,6 +16,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NARI"
         tools:targetApi="31">
+        <activity
+            android:name=".sensorshake"
+            android:exported="false">
+
+        </activity>
         <activity android:name=".pdfview"
             android:exported="false">
 

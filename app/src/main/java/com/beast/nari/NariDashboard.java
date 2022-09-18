@@ -42,8 +42,8 @@ public class NariDashboard extends AppCompatActivity {
 //                            z_accl > 2 ||
 //                            z_accl < -2)
 
-                    if (floatSum > 35){
-                        Intent intent = new Intent(getApplicationContext(), sensorshake.class);
+                    if (floatSum > 30){
+                        Intent intent = new Intent(getApplicationContext(),sensorshake.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
                         sensorManager.unregisterListener(this);
