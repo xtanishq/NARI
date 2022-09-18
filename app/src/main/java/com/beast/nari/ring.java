@@ -34,8 +34,8 @@ public class ring extends AppCompatActivity {
            public void onClick(View view) {
                mediaPlayer.stop();
                startActivity(new Intent(ring.this,callpicked.class));
-//                finishAffinity();
-               finish();
+                finishAffinity();
+
            }
        });
     }

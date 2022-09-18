@@ -9,8 +9,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 public class NariDashboard extends AppCompatActivity {
-    ImageView msk,helpline;
-    ImageView fakecall;
+    ImageView msk, helpline;
+    ImageView fakecall, self;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +19,7 @@ public class NariDashboard extends AppCompatActivity {
         msk = findViewById(R.id.msk);
         fakecall = findViewById(R.id.fakecall);
         helpline = findViewById(R.id.a);
+        self = findViewById(R.id.self);
 
         msk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,6 +47,18 @@ public class NariDashboard extends AppCompatActivity {
             public void onClick(View view) {
                 startActivity(new Intent(NariDashboard.this, ring.class));
 
+            }
+        });
+        self.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+////                startActivity(new Intent(NariDashboard.this, webpdf.class));
+//
+//                Intent intent = new Intent(getApplicationContext(),webpdf.class);
+////                intent.putExtra("pdf_url","http://hpri.fullerton.edu/Community/documents/unarmedselfdefense.pdf");
+//                startActivity(intent);
+
+                startActivity(new Intent(NariDashboard.this, pdfview.class));
             }
         });
     }

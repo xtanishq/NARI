@@ -44,6 +44,7 @@ public class callpicked extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(callpicked.this, NariDashboard.class));
+                finishAffinity();
             }
         });
     }

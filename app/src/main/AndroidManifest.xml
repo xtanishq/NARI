@@ -3,6 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.beast.nari">
 
+    <uses-permission android:name="android.permission.INTERNET">
+
+    </uses-permission>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,12 +18,17 @@
         android:theme="@style/Theme.NARI"
         tools:targetApi="31">
         <activity
+            android:name=".pdfview"
+            android:exported="false">
+
+        </activity>
+
+        <activity
             android:name=".callpicked"
             android:exported="false" />
         <activity
             android:name=".ring"
             android:exported="false" />
-
         <activity
             android:name=".nariProfile"
             android:exported="false" />
@@ -74,7 +83,7 @@
         <activity
             android:name=".MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps" />
     </application>
 
 </manifest>
