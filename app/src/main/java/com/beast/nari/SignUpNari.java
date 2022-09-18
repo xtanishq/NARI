@@ -1,5 +1,7 @@
 package com.beast.nari;
 
+import static com.beast.nari.Common.ConvertToString;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -7,6 +9,7 @@ import androidx.databinding.DataBindingUtil;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -37,6 +40,7 @@ public class SignUpNari extends AppCompatActivity {
     String signStatus;
 
     ProgressDialog progressDialog;
+    String strImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +54,18 @@ public class SignUpNari extends AppCompatActivity {
 
         signStatus = sp.getString("SIGN_UP_STATUS", null);
 
-        if (signStatus != null){
-            startActivity(new Intent(getApplicationContext(), NariDashboard.class));
-            finish();
-        }
+//        if (signStatus != null){
+//            startActivity(new Intent(getApplicationContext(), NariDashboard.class));
+//            finish();
+//        }
+
+
+        binding.profilePic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                takeIMG();
+            }
+        });
 
         binding.narisignup2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,9 +152,8 @@ public class SignUpNari extends AppCompatActivity {
                                 editor.putString("SIGN_UP_STATUS", "SIGNIND");
                                 editor.apply();
 
-                                progressDialog.dismiss();
-                                startActivity(new Intent(getApplicationContext(), NariDashboard.class));
-                                finish();
+
+                                uploadIMG();
 
                             }
 
@@ -193,6 +204,96 @@ public class SignUpNari extends AppCompatActivity {
             Toast.makeText(this, "something went wrong please try to reform", Toast.LENGTH_SHORT).show();
         }
 
+    }
+
+    private void uploadIMG() {
+
+        StringRequest request = new StringRequest(Request.Method.POST, "https://biochemical-damping.000webhostapp.com/nari/uploadimage.php",
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+                        if (response.contains("Image Uploaded") || response == ("Image Uploaded")){
+
+
+                            editor.putString("SIGN_UP_STATUS", "SIGNIND");
+                            editor.apply();
+
+                            progressDialog.dismiss();
+                            startActivity(new Intent(getApplicationContext(), NariDashboard.class));
+                            finish();
+                        }
+
+                        if (response.contains("failed")){
+
+                            progressDialog.dismiss();
+                            Toast.makeText(SignUpNari.this, "Failed", Toast.LENGTH_SHORT).show();
+
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                progressDialog.dismiss();
+                Toast.makeText(SignUpNari.this, "something went wrong\n" + error.getMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+        }){
+
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                Map<String, String> map = new HashMap<>();
+
+                map.put("userid", userName);
+                map.put("profilepic", strImage);
+
+                return map;
+
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(SignUpNari.this);
+        requestQueue.add(request);
+
+    }
+
+    private void takeIMG() {
+
+        Intent intent = new Intent();
+        intent.setType("image/*");
+//        intent.setType("file/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.putExtra("return-data", true);
+        startActivityForResult(Intent.createChooser(intent, "Complete action using"), 100);
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        
+        if (requestCode == 100 &&
+                resultCode == RESULT_OK &&
+                data != null &&
+                data.getData() != null){
+
+            
+            Uri URI = data.getData();
+            strImage = ConvertToString(URI, getContentResolver(), getApplicationContext());
+
+            if (strImage == null || strImage == "xyz"){
+                Toast.makeText(this, "reselect image", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+        }else {
+            Toast.makeText(this, "something went wrong Please select img again", Toast.LENGTH_SHORT).show();
+        }
+        
     }
 
 }
