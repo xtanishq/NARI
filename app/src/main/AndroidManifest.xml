@@ -54,11 +54,6 @@
         <activity
             android:name=".NariDashboard"
             android:exported="true" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".SignUpNari"
@@ -72,6 +67,11 @@
         <activity
             android:name=".MainPage"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
